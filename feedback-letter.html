@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+    <meta charset="utf-8">
+
+    <!-- default favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- wideley used favicon -->
+    <link rel="icon" href="images/favicon.png" sizes="32x32" type="image/png">
+
+    <title>The Mind at Large Lab: Mind Wandering and Motivation</title>
+
+    <link rel='stylesheet' href='css/lois-style.css'>
+
+</head>
+
+<body>
+
+    <header id='mal-header'>
+        <img id='mal-logo' src='images/logo3.png' style="width:200px" alt='logo for mind at large lab' />
+    </header>
+
+    <br>
+
+    <br>
+
+    <div id='form-thanks'>
+        <h4 style='text-align:center;'>Thank you for your feedback. We will review your comments and, if you included your email address, respond shortly.</h4>
+    </div>
+
+    <br>
+
+    <div id='EOS' style='font-size:16pt;text-align:center;'>
+        <p>Thank you for participating.</p>
+        <p><b>Your validation code is:</b></p>
+        <p id='sscode-ctn'><b><?php echo $sscode; ?></b></p>
+        <p>To receive payment for participating, click "Accept HIT" in the Mechanical Turk window, enter this validation code, then click "Submit".</p>
+    </div>
+
+    <div id='feedback-form' style='text-align:center'>
+
+        <p>If you had any technical issues with today's task or if you have any feedback you'd like to give us, fill out our <a href='form.html'>Feedback Form</a>.</p>
+
+    </div>
+
+    <br>
+
+    <div id='feedback-letter'>
+
+        <p><b>Title of research study:</b> Assessing Adaptive Control via Trial-Unique Stimuli</p>
+     
+        <p><b>Title of research study:</b> Examining the relationship between attention and learning.</p>
+        <p><b>Key Information</b></p>
+        <p>This consent form asks you to take part in a research study. The study is being conducted by Dr. Paul Seli, PhD., Assistant Professor in the Department of Psychology and Neuroscience at Duke University.</p>
+        <p><b>Purpose:</b> In daily life, we sometimes need to have a strong and stable focus on a single task at hand, at the expense of engaging with alternative activities, while at other times we need to be more flexible, switching frequently between different tasks, at the expense of doing any one of them with the utmost focus. Being able to strategically shift between different brain states (ranging from highly stable to highly flexible) so as to best suit the current environmental demands is a crucial but poorly understood cognitive ability called “strategic meta-flexibility.”</p>
+        <p>We are interested to see how or if people can learn to use cues to increase their flexibility. In this experiment, the tones were paired with "switching" or "repeating" between tasks. We hypothesize that participants would learn to associate one tone with more flexibility (switching). In the final block of trials, the tones were randomly presented so that we could measure whether it would improve your performance on switch trials. If you would like to know more or have any other questions about the experiment or your data, please feel free to contact me at nicholaus.brosowsky@duke.edu or Tobias Egner at tobias.egner@duke.edu.</p>
+
+        <p>If you are interested in learning more about some of the issues addressed in this project, then we recommend you read the following:</p>
+        <ul>Braem, S., &amp; Egner, T. (2018). Getting a grip on cognitive flexibility. Current Directions in Psychological Science, 27(6), 470-476. </ul>
+        <hr>
+        <p><i>As with all Duke University studies involving human participants, this project was reviewed by, and has received ethics clearance through a Duke University Human Subjects Committee. Should you have any questions for the Committee, please contact the Chair at 919-684-3030 or at <a href="mailto:ors-info@duke.edu">ors-info@duke.edu</a></i>
+
+    </div>
+
+    <script>
+        var sscode = sessionStorage.getItem("sscode");
+        console.log("the ss code is " + sscode);
+        var form_submit = sessionStorage.getItem("form_submit");
+        console.log("form submit = " + form_submit);
+
+        //show an element
+        function showPage(doc_ele) {
+            doc_ele.style.visibility = 'visible';
+            doc_ele.style.display = 'inline';
+        }
+
+        //hide an element   
+        function hidePage(doc_ele) {
+            doc_ele.style.visibility = 'hidden';
+            doc_ele.style.display = 'none';
+        }
+
+        const sscode_ctn = document.getElementById('sscode-ctn');
+        const form_thanks = document.getElementById('form-thanks');
+        const feedback_form = document.getElementById('feedback-form');
+        const EOS = document.getElementById('EOS');
+        const feedback_letter = document.getElementById('feedback-letter');
+
+        if (form_submit == 1) {
+            console.log("it's true!");
+            showPage(form_thanks);
+            hidePage(feedback_form);
+        } else {
+            showPage(feedback_form);
+        }
+
+        showPage(sscode_ctn);
+        showPage(EOS);
+        showPage(feedback_letter);
+        sscode_ctn.innerHTML = "<h3>" + sscode + "</h3>";
+    </script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="N.P. Brosowsky" content="Typing Game" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Stylesheets
+	============================================= -->
+    <link rel="stylesheet" href="css/tachyons.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/lois-style.css" type="text/css" />
+
+    <!--- Javascript on page load
+	============================================= -->
+    <script type="text/javascript">
+
+    </script>
+    <!-- Document Title
+	============================================= -->
+    <title>Typing Game</title>
+
+</head>
+
+<body>
+    <noscript>
+        <p>Javascript has been disabled in your browser.</p>
+        <p>In order to complete this study, you must enable JavaScript.</p>
+        <p>Here are <a href="https://www.enable-javascript.com/">instructions on how to enable JavaScript in your web browser</a>.</p>
+    </noscript>
+    <header id='mal-header'>
+        <img id='mal-logo' src='images/logo3.png' style="width: 200px" alt='logo for mind at large lab' />
+    </header>
+
+    <div id='info-consent-letter' style="width: 80%; margin: auto">
+        <p><b>Title of research study:</b> Assessing Adaptive Control via Trial-Unique Stimuli</p>
+        <p><b>Key Information</b></p>
+        <p>This research study is conducted by Dr. Tobias Egner of the Center for Cognitive Neuroscience at Duke University. Its purpose is to investigate the ease in which people switch between tasks. </p>
+        <p><strong>IMPORTANT: This experiment requires that you respond to sounds. It will require speakers or headphones to complete.</strong></p>
+        
+        <p><b>Procedure</b>In this experiment, you will be asked to identify competing stimuli (e.g. images and words) on the computer screen. Once you are finished with the task, you will also be asked to fill out a few questions about your demographics. If any questions make you uncomfortable, feel free to skip it, but please try to answer as many of the questions as you can.</p>
+        
+        <p>Specifically, you will be identifying the color of a word, while ignoring what that word says. (e.g., <span style="color:red">BLUE</span>, <span style="color:blue">YELLOW</span>). You will respond by pressing a key on the keyboard.  There will be 400 trials. The entire experiment should take less than 20 minutes. You will be compensated $2.75 for your participation.</p>
+
+        <p><b>Benefits and Risks:</b> We know of no risks or benefits to you for participating in this research study. The potential benefits of this research lie in the knowledge that will be acquired. </p>
+        
+        <p><b>Confidentiality</b> Our records will include the demographic information you report to us (your age, gender, etc.) as well as your task performance data. We employ a participant code system to ensure that this information is not directly linked to your name or consent form. The consent and demographic forms as well as the de-identified performance data will be stored in a secure location. All data will be kept for at least six years or as long as is required by Duke University or any journal that may publish these findings. If a report of this study is published, or the results are presented at a professional conference, only group results will be reported. However, your data, with direct identifiers removed, may be used for future studies and/or shared with other researchers. The audio recordings of your voice will not be shared.</p>
+        
+        <p><b>Compensation and Participation</b>For participating in this study, you will earn $2.75. We will screen your responses prior to compensation. If you do not complete the task, or we think that you completed it to an unsatisfactory standard (i.e. you do not follow the instructions), you will not be compensated. There will be 400 trials. The entire experiment should take less than 20 minutes.</p>
+        
+        <p><b>Contact</b>any questions about your rights as a research subject, you may contact the Human Subjects Protection at campusirb@duke.edu.</p>
+        <hr>
+        <p>Please click to indicate your consent to participate in the study.</p>
+        <p><b>Protocol:</b>2020-0205</p>
+        
+        
+    <div id='decline-to-participate'>
+        <p>You have declined to participate at this time.</p>
+        <p>If you change your mind, simply reload this webpage.</p>
+    </div>
+    <button id='no-consent-btn' class='consent-btn' style="display: inline; visibility: visible">I do not agree to participate</button>
+    <button id='yes-consent-btn' class='consent-btn' style="display: inline; visibility: visible"><b>I agree to participate</b></button>
+
+    </div>
+
+    <!-- Javascript before page load
+    ============================================== -->
+
+    <!-- custom JS -->
+    <script>
+        document.querySelector("#info-consent-letter").style.display = "block"
+        document.querySelector("#info-consent-letter").style.visibility = "visible"
+
+
+        document.querySelector("#no-consent-btn").addEventListener("click",
+            function() {
+                document.querySelector("#info-consent-letter").style.display = "none";
+                document.querySelector("#decline-to-participate").style.display = "block";
+                document.querySelector("#decline-to-participate").style.visibility = "visible";
+                document.querySelector("#no-consent-btn").style.display = "none";
+                document.querySelector("#yes-consent-btn").style.display = "none";
+            });
+
+
+        document.querySelector("#yes-consent-btn").addEventListener("click", function() {
+            window.open("task.html?" + window.location.search.slice(1) , "_self");
+        });
+
+      
+
+    </script>
+</body>

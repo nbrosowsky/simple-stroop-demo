@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="N.P. Brosowsky" content="Typing Game" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Stylesheets
+	============================================= -->
+    <link rel="stylesheet" href="css/tachyons.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+    <!--- Javascript on page load
+	============================================= -->
+    <script type="text/javascript">
+
+    </script>
+    <!-- Document Title
+	============================================= -->
+    <title>Typing Game</title>
+
+</head>
+
+<body class="bg-black">
+    <div id="main-display" class="full-display flex items-center justify-center fs-normal helvetica bg-black white" style="display: none"></div>
+
+    <!-- Javascript before page load
+    ============================================== -->
+
+    <!-- external JS -->
+  
+    <!-- common JS -->
+    <script type="text/javascript" src="js/eventTimer.js"></script>
+
+
+    <!-- custom JS -->
+    <script type="text/javascript" src="js/record_data.js"></script>
+    <script type="text/javascript" src="js/create_stroop_trials.js"></script>
+    <script type="text/javascript" src="js/run_stroop.js"></script>
+    <script type="text/javascript">
+        // start stroop 
+        init_stroop();
+    </script>
+        
+</body>
